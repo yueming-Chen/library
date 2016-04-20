@@ -1,0 +1,12 @@
+<div class="row">
+	<h2>{{name}}    的借閱歷史</h2>
+	<div class="col-lg-4" 
+	ng-repeat="book in books">
+	    <h2>
+	      <span>{{book}}</span>
+	    </h2>
+	    <p>借閱日：{{borrowTime}}</p>
+	   	<p>到期日：{{retrunTime}}</p>
+	    <hr class="featurette-divider">
+	</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="row">
+	<div class="col-lg-4">
+		你到底想要查什麼書呢??????????
+		<input class="form-control" ng-model="text"></input>
+		<button type="button" ng-click="search(text)">search</button>
+	</div>
+</div>
+<div class="row" ng-show = "Searched" ng-repeat="book in bookList">
+	<div class="col-lg-4">
+		{{book}}</br>
+		</br>
+	</div>
+</div>

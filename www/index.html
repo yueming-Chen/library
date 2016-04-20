@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+   <html ng-app="newLib">
+	<head>
+		<title>fuck boy</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js">
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js">
+		</script>
+	    <script src="scripts/ie-emulation-modes-warning.js"></script>
+	    <script src="scripts/vendor/holder.min.js"></script>
+	    <script src="scripts/ie10-viewport-bug-workaround.js"></script>
+	    <script src="scripts/app.js"></script>
+      <script src="scripts/api.js"></script>
+		<!-- controllers -->
+		<script src="scripts/controllers/homeCtrl.js"></script>
+		<script src="scripts/controllers/selfdataCtrl.js"></script>
+    <script src="scripts/controllers/searchCtrl.js"></script>
+    <script src="scripts/controllers/bookDetailCtrl.js"></script>
+    <script src="scripts/controllers/loginCtrl.js"></script>
+    <script src="scripts/controllers/uploadCtrl.js"></script>
+    <script src="scripts/controllers/borrowCtrl.js"></script>
+    <script src="scripts/controllers/myBorrowCtrl.js"></script>
+    <script src="scripts/controllers/myReservationCtrl.js"></script>
+    <script src="scripts/controllers/myDelayCtrl.js"></script>
+    <script src="scripts/controllers/myDetailEditCtrl.js"></script>
+    <script src="scripts/controllers/changPasswordCtrl.js"></script>
+    
+	</head>
+	<body>
+	</body>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="scripts/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+<!-- NAVBAR
+================================================== -->
+    <div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#home">北科大超級超級圖書館</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#about">關於本館</a></li>
+                <li><a href="#search">書籍查詢</a></li>
+                <li class="dropdown" ng-show="priority==1">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">個人資訊 <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#myBorrow">我的借閱歷史</a></li>
+                    <li><a href="#myReservation">我的預約歷史</a></li>
+                    <li><a href="#myDelay">我的違規歷史</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li class="dropdown-header">個人資料</li>
+                    <li><a href="#myDetailEdit">個人資料編輯</a></li>
+                    <li><a href="#changPassWord">變更密碼</a></li>
+                    <li><a ng-click='logout()'>登出</a></li>
+                  </ul>
+                </li>
+                <li class="dropdown" ng-show="logined">
+                  <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">管理員系統 <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#upload">上架書籍</a></li>
+                    <li><a href="#borrow">借出書籍</a></li>
+                    <li><a ng-click='logout()'>登出</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#login" ng-hide="logined">登入</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+      </div>
+    </div>
+
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img class="first-slide"  alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>圖書館慶開館，借三本可以多延一天</h1>
+              </br></br></br></br></br></br>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>館長慶生禮</h1>
+              <p>恭喜陳英一館長生日快樂，只要借書，即可獲得館長的簽名照一張。</p>
+              <p><a class="btn btn-lg btn-primary" href="#search" role="button">馬上查書</a></p> 
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>12月新書快報</h1>
+              <p>總共有201新書。</p>
+              <p>有新增大量的期刊助同學看黑板順利。</p>
+              <p><a class="btn btn-lg btn-primary" href="#search" role="button">查閱新書</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div><!-- /.carousel -->
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    	<!-- 此為控制的好地方!!!-->
+    	<!--
+		practical css container marketing row col-lg-4
+    	-->
+      <!-- Three columns of text below the carousel -->
+      <div class="container marketing">
+       	<div ui-view></div>
+      
+      	<!--從此開始換業-->
+      </div>
+      <hr class="featurette-divider">
+
+      <!-- FOOTER -->
+      <footer >
+        <p>北科資料庫小組工作室</p>
+        <p>楊雅婷 陳約銘 蔡薇妮 梁桂花</p>
+      </footer>
+
+    </div><!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+	</html>
