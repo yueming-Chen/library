@@ -1,0 +1,13 @@
+<div class="row">
+	<h2>{{name}}    的預約歷史</h2>
+	<div class="col-lg-4" 
+	ng-repeat="book in books">
+	    <h2>
+	      <span>{{book}}</span>
+	    </h2>
+	    <p ng-show="book=='鮑曼王2'">請到館取件，只為您保留到   2016/1/07   。</p>
+	    <p ng-hide="book=='鮑曼王2'">您排位為第{{1}}位。</p>
+	    <p>預約日：{{reserveTime}}</p>
+	    <hr class="featurette-divider">
+	</div>
+</div>

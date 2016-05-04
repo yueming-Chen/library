@@ -1,0 +1,12 @@
+<div class="row">
+	<h2>{{name}}    的違規歷史</h2>
+	<div class="col-lg-4" 
+	ng-repeat="event in events">
+	    <h2>
+	      <span>{{event}}</span>
+	    </h2>
+	    <p ng-show="event=='2015/9/08' || event=='2015/12/17'">{{reason[0]}}</p>
+	    <p ng-hide="event=='2015/9/08' || event=='2015/12/17'">{{reason[1]}}</p>
+	    <hr class="featurette-divider">
+	</div>
+</div>

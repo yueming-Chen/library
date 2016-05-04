@@ -1,0 +1,28 @@
+<div class="row">
+	<div class="col-lg-4">
+	<!--title-->
+	<h3>{{name}} 的個人資料</h3>
+		</br></br>
+		學號：
+		<div ng-hide="modifying">{{Account.Id}}</div>
+		<input class="form-control" ng-model="IdModified" 
+		ng-show="modifying"></input>
+		</br>
+		性別：
+		<div ng-hide="modifying">{{sex}}</div>
+		<input class="form-control" ng-model="sexModified"
+		ng-show="modifying"></input>
+		</br>
+		生日：
+		<div ng-hide="modifying">{{birth}}</div>
+		<input class="form-control" ng-model="birthModified"
+		ng-show="modifying"></input>
+		</br>
+		<button class="btn1" type="button" ng-hide="modifying" 
+		ng-click="modifying = 1">修改</button>
+		<button class="btn1" type="button" ng-show="modifying"
+		ng-click="confirm()">確定</button>
+		<button class="btn1" type="button" ng-show="modifying"
+		ng-click="clear()">取消</button>
+	</div>
+</div>
